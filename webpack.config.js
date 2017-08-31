@@ -5,7 +5,7 @@ const isProd = process.env.NODE_ENV === 'production';
 module.exports = {
   devtool: isProd ? 'none' : 'inline-source-map',
   entry: {
-    main: './index.ts',
+    main: './src/index.ts',
   },
   output: {
     path: path.join(__dirname, "dist"),
@@ -21,6 +21,5 @@ module.exports = {
       { test: /\.tsx?$/, loader: 'ts-loader' }
     ]
   },
-  context: path.join(__dirname, "src"),
   plugins: [ ]
 }
