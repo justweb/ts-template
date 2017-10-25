@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -21,5 +22,10 @@ module.exports = {
       { test: /\.tsx?$/, loader: 'ts-loader' }
     ]
   },
-  plugins: [ ]
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'TS Template App',
+      template: './src/index.ejs'
+    })
+  ]
 }
